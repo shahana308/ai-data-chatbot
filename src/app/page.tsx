@@ -1,5 +1,9 @@
+import React from "react";
+import MainLayout from "@/components/MainLayout";
+import "../styles/global.css";
+
 const Home = () => {
-  return <div>test</div>;
+  return <MainLayout />;
 };
 
 export default Home;
