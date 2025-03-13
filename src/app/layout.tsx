@@ -1,5 +1,5 @@
-import QueryProvider from "../components/QueryProvider";
 import "../styles/global.css";
+import Providers from "./providers";
 
 export const metadata = {
   title: "Data-Driven AI",
@@ -10,7 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <QueryProvider>{children}</QueryProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

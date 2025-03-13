@@ -1,9 +1,9 @@
-import { DataAnalysisResponse } from "@/types/DataAnalysis";
+import { DataAnalysisResponse } from "types/DataAnalysis";
 import axios from "axios";
 
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const API_KEY =
-  "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";
+  "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";
 
 export const fetchDataAnalysis = async (content: string) => {
   try {
