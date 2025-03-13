@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { fetchDataAnalysis } from "@/api/data-analysis-assistant.api";
-import { DataAnalysisResponse } from "@/types/DataAnalysis";
+import { fetchDataAnalysis } from "api/data-analysis-assistant.api";
+import { DataAnalysisResponse } from "types/DataAnalysis";
 
 const ChatWindow = () => {
   const [input, setInput] = useState("");
