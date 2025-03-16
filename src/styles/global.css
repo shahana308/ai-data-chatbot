@@ -1,2 +1,9 @@
 @import "./fonts.scss";
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #0e1e46;
+  --color-gray-200: #d5dae7;
+  --color-gray-300: #d2d7e3;
+  --color-peach-100: #fce8e6;
+}

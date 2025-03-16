@@ -1,11 +1,13 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import ChatHistory from "./ChatHistory";
-import ChatWindow from "./ChatWindow";
+import ChatWindow from "./chatwindow/ChatWindow";
 
 const MainLayout = () => {
   return (
-    <div className="flex bg-[#0e1e46] h-screen w-screen">
+    <div className="flex bg-primary h-screen w-screen">
+      <h1 className="text-primary">This should be primary color</h1>
+
       <Sidebar />
       <ChatHistory />
       <ChatWindow />
