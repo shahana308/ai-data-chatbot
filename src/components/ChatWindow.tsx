@@ -25,7 +25,7 @@ const ChatWindow = () => {
   };
 
   return (
-    <div className="w-3/5 bg-gray-100 p-4 h-screen">
+    <div className="w-2/3 bg-gray-100 p-4 m-5 rounded-3xl">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

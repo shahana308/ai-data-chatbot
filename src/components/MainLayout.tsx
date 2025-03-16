@@ -2,7 +2,6 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import ChatHistory from "./ChatHistory";
 import ChatWindow from "./ChatWindow";
-import UserProfile from "./UserProfile";
 
 const MainLayout = () => {
   return (
@@ -10,7 +9,6 @@ const MainLayout = () => {
       <Sidebar />
       <ChatHistory />
       <ChatWindow />
-      <UserProfile />
     </div>
   );
 };
