@@ -9,6 +9,8 @@ const theme: ThemeConfig = {
   components: {
     Button: {
       colorPrimary: "#d5dae7",
+      colorPrimaryText: "#000",
+
       colorPrimaryHover: "#c2c6d0",
       colorPrimaryActive: "#c2c6d0",
     },
