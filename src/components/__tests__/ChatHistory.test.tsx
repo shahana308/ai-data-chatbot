@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "utils/test-utils";
-import ChatHistory from "../ChatHistory";
+import ChatHistory from "../chat-history/ChatHistory";
 
 describe("ChatHistory", () => {
   it("renders correctly and matches snapshot", () => {
