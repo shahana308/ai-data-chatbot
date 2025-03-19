@@ -12,6 +12,7 @@ const ChatHistory = () => {
   const { addChat, chats } = useChatStore();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [newChatTitle, setNewChatTitle] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleOk = () => {
     if (newChatTitle.trim()) {
@@ -31,14 +32,22 @@ const ChatHistory = () => {
 
       <Divider className="!my-0" />
 
-      <Input placeholder="Search Chat Groups" className="!my-4" />
+      <Input
+        placeholder="Search Chat Groups"
+        className="!my-4"
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
       <Divider className="!my-0" />
 
       <div className="flex-grow overflow-y-auto p-2 space-y-2 h-[90vh]">
-        {chats.map((chat) => (
-          <ChatHistoryCard key={chat.id} chat={chat} />
-        ))}
+        {chats
+          .filter((chat) =>
+            chat.title.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((chat) => (
+            <ChatHistoryCard key={chat.id} chat={chat} />
+          ))}
       </div>
 
       <NewChatButton onClick={() => setIsModalVisible(true)} />
