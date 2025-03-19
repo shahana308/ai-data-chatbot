@@ -11,7 +11,7 @@ import useChatStore from "stores/useChatStore";
 const ChatWindow = () => {
   const { form, isLoading, handleSubmit } = useChatWindow();
 
-  const { selectedChat } = useChatStore();
+  const { chats, selectedChat } = useChatStore();
 
   return (
     <div className="flex flex-col w-2/4 bg-white p-4 m-5 rounded-3xl shadow-lg">
@@ -20,9 +20,12 @@ const ChatWindow = () => {
 
         <Divider className="!mt-0 !mb-4" />
 
-        {selectedChat?.messages.map((msg: ChatResponse, index: number) => (
-          <ChatMessage key={index} msg={msg} />
-        ))}
+        {chats
+          .filter((chat) => chat.id === selectedChat?.id)
+          .flatMap((chat) => chat.messages)
+          .map((msg: ChatResponse, index: number) => (
+            <ChatMessage key={index} msg={msg} />
+          ))}
 
         {isLoading && (
           <div className="flex justify-start mt-2">

@@ -10,6 +10,7 @@ import { Chat } from "types/Chat";
 
 const useChatWindow = () => {
   const [form] = Form.useForm();
+
   const { addChat, clearChats } = useChatStore();
 
   const fetchMessages = useFetchChatMessages();
@@ -38,13 +39,38 @@ const useChatWindow = () => {
   const handleSubmit = (value: { message: string }) => {
     if (value.message.trim() === "") return;
 
-    saveUserMessage.mutate({
-      message: value.message,
-      type: "user",
-      title: useChatStore.getState().selectedChat?.title || "",
-      id: useChatStore.getState().selectedChat?.id || "",
-    });
-    fetchBotResponse.mutate(value.message);
+    const { selectedChat, chats } = useChatStore.getState();
+
+    if (selectedChat) {
+      const newMessage = {
+        id: Date.now().toString(),
+        user_message: value.message,
+        bot_message: null,
+        timestamp: new Date().toISOString(),
+        title: selectedChat.title,
+      };
+
+      const updatedChat = {
+        ...selectedChat,
+        messages: [...selectedChat.messages, newMessage],
+      };
+
+      useChatStore.setState({
+        selectedChat: updatedChat,
+        chats: chats.map((chat) =>
+          chat.id === selectedChat.id ? updatedChat : chat
+        ),
+      });
+
+      saveUserMessage.mutate({
+        message: value.message,
+        type: "user",
+        title: selectedChat.title,
+        id: selectedChat.id,
+      });
+
+      fetchBotResponse.mutate(value.message);
+    }
 
     form.resetFields();
   };
@@ -80,9 +106,18 @@ const useChatWindow = () => {
 
       formattedChats.forEach((chat: Chat) => addChat(chat));
 
-      // useChatStore.setState({
-      //   selectedChat: formattedChats[0],
-      // });
+      const { selectedChat } = useChatStore.getState();
+      if (!selectedChat && formattedChats.length > 0) {
+        useChatStore.setState({
+          selectedChat: formattedChats[0],
+        });
+      } else {
+        useChatStore.setState({
+          selectedChat: formattedChats.find(
+            (chat: Chat) => chat.id === selectedChat?.id
+          ),
+        });
+      }
     }
   }, [fetchMessages.data]);
 
