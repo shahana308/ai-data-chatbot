@@ -5,6 +5,8 @@ interface ChatStore {
   chats: Chat[];
   addChat: (chat: Chat) => void;
   clearChats: () => void;
+
+  selectedChat: Chat | null;
 }
 
 const useChatStore = create<ChatStore>((set) => ({
@@ -14,6 +16,8 @@ const useChatStore = create<ChatStore>((set) => ({
       chats: [...state.chats, chat],
     })),
   clearChats: () => set({ chats: [] }),
+
+  selectedChat: null,
 }));
 
 export default useChatStore;

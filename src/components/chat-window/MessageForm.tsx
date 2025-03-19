@@ -19,7 +19,7 @@ const MessageForm: React.FC<MessageFormProps> = ({
     <Form
       form={form}
       onFinish={onSubmit}
-      className="w-full border border-gray-300 h-20 rounded-3xl"
+      className="w-full border border-gray-300 h-20 rounded-3xl !mt-5"
     >
       <div className="flex items-center gap-2">
         <Form.Item name="message" className="flex-1 !m-0">
