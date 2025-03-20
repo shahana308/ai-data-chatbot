@@ -27,30 +27,33 @@ const ChatHistory = () => {
   };
 
   return (
-    <div className="flex flex-col w-1/4 bg-white p-4 my-5 rounded-3xl overflow-y-auto relative">
-      <Header title="Chat History" />
+    <div className="flex flex-col w-1/4 bg-white my-5 rounded-3xl overflow-y-auto relative">
+      <div className="p-4">
+        <Header title="Chat History" />
 
-      <Divider className="!my-0" />
+        <Divider className="!my-0" />
 
-      <Input
-        placeholder="Search Chat Groups"
-        className="!my-4"
-        onChange={(e) => setSearch(e.target.value)}
-      />
+        <Input
+          placeholder="Search Chat Groups"
+          className="!my-4"
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
-      <Divider className="!my-0" />
-
-      <div className="flex-grow overflow-y-auto p-2 space-y-2 h-[90vh]">
-        {chats
-          .filter((chat) =>
-            chat.title.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((chat) => (
-            <ChatHistoryCard key={chat.id} chat={chat} />
-          ))}
+        <Divider className="!my-0" />
       </div>
 
-      <NewChatButton onClick={() => setIsModalVisible(true)} />
+      <div className="overflow-y-scroll h-[90vh]">
+        <div className="flex-grow p-2 space-y-2">
+          {chats
+            .filter((chat) =>
+              chat.title.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((chat) => (
+              <ChatHistoryCard key={chat.id} chat={chat} />
+            ))}
+        </div>
+        <NewChatButton onClick={() => setIsModalVisible(true)} />
+      </div>
 
       <NewChatModal
         isVisible={isModalVisible}
