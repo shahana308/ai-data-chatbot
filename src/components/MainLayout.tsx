@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 import ChatHistory from "./chat-history/ChatHistory";
 import ChatWindow from "./chat-window/ChatWindow";
 
