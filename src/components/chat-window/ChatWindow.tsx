@@ -14,7 +14,7 @@ const ChatWindow = () => {
   const { chats, selectedChat } = useChatStore();
 
   return (
-    <div className="flex flex-col w-2/4 bg-white p-4 m-5 rounded-3xl shadow-lg">
+    <div className="flex flex-col bg-white rounded-3xl shadow-lg w-full md:w-2/3 lg:w-1/2 lg:m-5 bg-gray-100 flex-grow p-4 ">
       <div className="flex flex-col flex-grow overflow-y-auto space-y-3">
         <Header title={selectedChat?.title} />
 
