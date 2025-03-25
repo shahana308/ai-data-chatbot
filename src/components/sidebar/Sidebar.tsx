@@ -29,7 +29,7 @@ const items2 = [
 
 const Sidebar = () => {
   return (
-    <div className="w-1/4 text-white h-screen ">
+    <div className="w-full md:w-1/3 lg:w-1/4 bg-secondary p-4">
       <div className="flex items-center gap-x-5 sticky top-0 z-10 bg-transparent p-5 ">
         <Header
           title={

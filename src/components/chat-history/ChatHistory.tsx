@@ -7,6 +7,7 @@ import NewChatButton from "./NewChatButton";
 import Header from "components/shared/Header";
 import { Divider, Input } from "antd";
 import ChatHistoryCard from "./ChatHistoryCard";
+import { PlusOutlined } from "@ant-design/icons";
 
 const ChatHistory = () => {
   const { addChat, chats } = useChatStore();
@@ -27,19 +28,32 @@ const ChatHistory = () => {
   };
 
   return (
-    <div className="flex flex-col w-1/4 bg-white my-5 rounded-3xl overflow-y-auto relative">
+    <div className="flex flex-col bg-white my-5 rounded-3xl overflow-y-auto relative w-full md:w-1/3 lg:w-1/4 bg-white overflow-y-auto">
       <div className="p-4">
-        <Header title="Chat History" />
+        <div className="flex justify-between items-center">
+          <Header title="Chat History" />
+          <PlusOutlined
+            className="lg:!hidden"
+            onClick={() => setIsModalVisible(true)}
+          />
+          <Input
+            placeholder="Search Chat Groups"
+            className="!w-[150px] lg:!hidden"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
 
         <Divider className="!my-0" />
 
-        <Input
-          placeholder="Search Chat Groups"
-          className="!my-4"
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="hidden lg:block">
+          <Input
+            placeholder="Search Chat Groups"
+            className="!my-4 "
+            onChange={(e) => setSearch(e.target.value)}
+          />
 
-        <Divider className="!my-0" />
+          <Divider className="!my-0" />
+        </div>
       </div>
 
       <div className="overflow-y-scroll h-[90vh]">
