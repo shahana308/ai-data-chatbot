@@ -7,6 +7,9 @@ interface ChatStore {
   clearChats: () => void;
 
   selectedChat: Chat | null;
+
+  selectedTab: string;
+  setSelectedTab: (tab: string) => void;
 }
 
 const useChatStore = create<ChatStore>((set) => ({
@@ -18,6 +21,9 @@ const useChatStore = create<ChatStore>((set) => ({
   clearChats: () => set({ chats: [] }),
 
   selectedChat: null,
+
+  selectedTab: "1",
+  setSelectedTab: (tab) => set({ selectedTab: tab }),
 }));
 
 export default useChatStore;
