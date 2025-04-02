@@ -48,6 +48,8 @@ const useChatWindow = () => {
         bot_message: null,
         timestamp: new Date().toISOString(),
         title: selectedChat.title,
+        isFavorite: false,
+        isSaved: false,
       };
 
       const updatedChat = {
@@ -83,11 +85,19 @@ const useChatWindow = () => {
 
       const formattedChats = fetchMessages.data.reduce(
         (acc: Chat[], message: ChatResponse) => {
-          const { id, title, bot_message, user_message, timestamp } = message;
+          const {
+            id,
+            title,
+            bot_message,
+            user_message,
+            timestamp,
+            isFavorite,
+            isSaved,
+          } = message;
 
           let chat = acc.find((c: Chat) => c.id === id);
           if (!chat) {
-            chat = { id, title, messages: [] };
+            chat = { id, title, isFavorite, isSaved, messages: [] };
             acc.push(chat);
           }
 

@@ -11,6 +11,7 @@ import { PlusOutlined } from "@ant-design/icons";
 
 const ChatHistory = () => {
   const { addChat, chats } = useChatStore();
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [newChatTitle, setNewChatTitle] = useState("");
   const [search, setSearch] = useState("");

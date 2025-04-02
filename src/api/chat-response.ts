@@ -26,6 +26,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Revenue Analysis",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:32:00Z",
@@ -49,6 +51,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Weather Summary",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:33:00Z",
@@ -69,6 +73,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Brand Distribution",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:34:00Z",
@@ -90,6 +96,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Web Traffic",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:35:00Z",
@@ -110,6 +118,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Product Overview",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:36:00Z",
@@ -131,6 +141,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Work Breakdown",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:37:00Z",
@@ -152,6 +164,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "Skill Analysis",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-18T15:38:00Z",
@@ -173,6 +187,8 @@ export const useFetchChatMessages = () => {
           }),
           title: "ROI Scatter Plot",
           id: "2016",
+          isFavorite: false,
+          isSaved: true,
         },
         {
           timestamp: "2025-03-17T08:00:00Z",
@@ -180,6 +196,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Weather Info",
           id: "2001",
+          isFavorite: true,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T08:01:00Z",
@@ -187,6 +205,8 @@ export const useFetchChatMessages = () => {
           bot_message: "Today's forecast is sunny with a high of 25°C.",
           title: "Weather Info",
           id: "2001",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T09:15:00Z",
@@ -194,6 +214,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Jokes",
           id: "2002",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T09:16:00Z",
@@ -202,6 +224,8 @@ export const useFetchChatMessages = () => {
             "Why don’t skeletons fight each other? They don’t have the guts!",
           title: "Jokes",
           id: "2002",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T10:00:00Z",
@@ -209,6 +233,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Tech Trends",
           id: "2003",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T10:01:00Z",
@@ -217,6 +243,8 @@ export const useFetchChatMessages = () => {
             "The top programming languages in 2025 are Python, JavaScript, Rust, Go, and TypeScript.",
           title: "Tech Trends",
           id: "2003",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T11:30:00Z",
@@ -224,6 +252,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Book Recommendations",
           id: "2004",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T11:31:00Z",
@@ -232,6 +262,8 @@ export const useFetchChatMessages = () => {
             "I recommend 'Atomic Habits' by James Clear. It's a great book on personal development!",
           title: "Book Recommendations",
           id: "2004",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T13:45:00Z",
@@ -239,6 +271,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Healthy Eating",
           id: "2005",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T13:46:00Z",
@@ -247,6 +281,8 @@ export const useFetchChatMessages = () => {
             "Some healthy breakfast options include oatmeal, Greek yogurt with fruit, and avocado toast.",
           title: "Healthy Eating",
           id: "2005",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T15:00:00Z",
@@ -254,6 +290,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Blockchain Basics",
           id: "2006",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T15:01:00Z",
@@ -262,6 +300,8 @@ export const useFetchChatMessages = () => {
             "Blockchain is a decentralized ledger that records transactions across multiple computers securely.",
           title: "Blockchain Basics",
           id: "2006",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T16:10:00Z",
@@ -269,6 +309,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Language Translation",
           id: "2007",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T16:11:00Z",
@@ -277,6 +319,8 @@ export const useFetchChatMessages = () => {
             "The translation of 'Good Morning' in French is 'Bonjour'.",
           title: "Language Translation",
           id: "2007",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T17:20:00Z",
@@ -284,6 +328,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Sports Trivia",
           id: "2008",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T17:21:00Z",
@@ -292,6 +338,8 @@ export const useFetchChatMessages = () => {
             "Argentina won the FIFA World Cup in 2022, led by Lionel Messi.",
           title: "Sports Trivia",
           id: "2008",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T18:30:00Z",
@@ -299,6 +347,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Geography",
           id: "2009",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T18:31:00Z",
@@ -313,6 +363,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Cooking Tips",
           id: "2010",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-17T20:01:00Z",
@@ -321,6 +373,8 @@ export const useFetchChatMessages = () => {
             "To bake a chocolate cake, you'll need flour, cocoa powder, eggs, sugar, and baking powder. Mix and bake at 350°F for 30 minutes!",
           title: "Cooking Tips",
           id: "2010",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T08:45:00Z",
@@ -328,6 +382,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Travel Guide",
           id: "2011",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T08:46:00Z",
@@ -336,6 +392,8 @@ export const useFetchChatMessages = () => {
             "Some great places to visit in New York are Times Square, Central Park, and the Statue of Liberty.",
           title: "Travel Guide",
           id: "2011",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T09:30:00Z",
@@ -343,6 +401,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Science Facts",
           id: "2012",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T09:31:00Z",
@@ -351,6 +411,8 @@ export const useFetchChatMessages = () => {
             "Photosynthesis is the process by which plants convert sunlight into energy, using chlorophyll in their leaves.",
           title: "Science Facts",
           id: "2012",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T11:15:00Z",
@@ -358,6 +420,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "History",
           id: "2013",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T11:16:00Z",
@@ -366,6 +430,8 @@ export const useFetchChatMessages = () => {
             "Neil Armstrong was the first person to walk on the moon on July 20, 1969.",
           title: "History",
           id: "2013",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T13:00:00Z",
@@ -373,6 +439,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Programming Tips",
           id: "2014",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T13:01:00Z",
@@ -381,6 +449,8 @@ export const useFetchChatMessages = () => {
             "Practice daily, build projects, read documentation, and contribute to open source.",
           title: "Programming Tips",
           id: "2014",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T14:30:00Z",
@@ -388,6 +458,8 @@ export const useFetchChatMessages = () => {
           bot_message: "",
           title: "Finance",
           id: "2015",
+          isFavorite: false,
+          isSaved: false,
         },
         {
           timestamp: "2025-03-18T14:31:00Z",
@@ -396,6 +468,8 @@ export const useFetchChatMessages = () => {
             "The stock market is a marketplace where investors buy and sell shares of companies.",
           title: "Finance",
           id: "2015",
+          isFavorite: false,
+          isSaved: false,
         },
       ];
 
