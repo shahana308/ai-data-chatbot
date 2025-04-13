@@ -44,7 +44,6 @@ const ChatHistoryCard = ({ chat }: { chat: Chat }) => {
     }
   };
 
-  console.log(useChatStore.getState().selectedChat);
   return (
     <div
       className={`flex flex-col ${bgColor} py-8 px-5 rounded-3xl border border-gray-100`}
