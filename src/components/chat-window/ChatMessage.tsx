@@ -14,7 +14,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ msg }) => {
   let chartData = null;
 
   try {
-    const parsed = JSON.parse(msg.bot_message || "");
+    const parsed = JSON.parse(msg?.bot_message || "");
     if (
       parsed?.data &&
       parsed?.xAxisLabel &&

@@ -63,7 +63,7 @@ interface ChartMessageProps {
 const ChartMessage: React.FC<ChartMessageProps> = ({ chartData }) => {
   const { chartType = "bar" } = chartData;
 
-  const isXYChart = ["bar", "line", "scatter"].includes(chartType);
+  const isXYChart = ["bar", "line", "scatter"]?.includes(chartType);
 
   const commonOptions = {
     responsive: true,
@@ -80,13 +80,13 @@ const ChartMessage: React.FC<ChartMessageProps> = ({ chartData }) => {
         x: {
           title: {
             display: true,
-            text: chartData.xAxisLabel,
+            text: chartData?.xAxisLabel,
           },
         },
         y: {
           title: {
             display: true,
-            text: chartData.yAxisLabel,
+            text: chartData?.yAxisLabel,
           },
         },
       },
@@ -106,11 +106,11 @@ const ChartMessage: React.FC<ChartMessageProps> = ({ chartData }) => {
           <Bar
             {...chartProps}
             data={{
-              labels: chartData.data.map((d) => String(d.x)),
+              labels: chartData?.data?.map((d) => String(d.x)),
               datasets: [
                 {
-                  label: chartData.yAxisLabel,
-                  data: chartData.data.map((d) => d.y),
+                  label: chartData?.yAxisLabel,
+                  data: chartData?.data?.map((d) => d.y),
                   backgroundColor: "rgba(75,192,192,0.6)",
                   borderColor: "rgba(75,192,192,1)",
                   borderWidth: 1,
@@ -126,8 +126,8 @@ const ChartMessage: React.FC<ChartMessageProps> = ({ chartData }) => {
             data={{
               datasets: [
                 {
-                  label: `${chartData.yAxisLabel} vs ${chartData.xAxisLabel}`,
-                  data: chartData.data,
+                  label: `${chartData?.yAxisLabel} vs ${chartData?.xAxisLabel}`,
+                  data: chartData?.data,
                   backgroundColor: "rgba(153,102,255,0.6)",
                   borderColor: "rgba(153,102,255,1)",
                 },
@@ -140,11 +140,11 @@ const ChartMessage: React.FC<ChartMessageProps> = ({ chartData }) => {
           <Line
             {...chartProps}
             data={{
-              labels: chartData.data.map((d) => String(d.x)),
+              labels: chartData?.data?.map((d) => String(d.x)),
               datasets: [
                 {
-                  label: chartData.yAxisLabel,
-                  data: chartData.data.map((d) => d.y),
+                  label: chartData?.yAxisLabel,
+                  data: chartData?.data?.map((d) => d.y),
                   fill: false,
                   borderColor: "#36A2EB",
                   tension: 0.4,
@@ -158,11 +158,11 @@ const ChartMessage: React.FC<ChartMessageProps> = ({ chartData }) => {
           <Doughnut
             {...chartProps}
             data={{
-              labels: chartData.data.map((d) => String(d.x)),
+              labels: chartData?.data?.map((d) => String(d.x)),
               datasets: [
                 {
-                  label: chartData.yAxisLabel,
-                  data: chartData.data.map((d) => d.y),
+                  label: chartData?.yAxisLabel,
+                  data: chartData?.data?.map((d) => d.y),
                   backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
                 },
               ],
