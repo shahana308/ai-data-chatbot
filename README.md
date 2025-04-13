@@ -2,9 +2,13 @@
 
 ## Overview
 ChatBot is an AI-powered chatbot utilizing the DeepSeek Model API (**DeepSeek R1 Zero**). This project enables users to interact with an intelligent conversational agent for various use cases.
+
 <img width="1728" alt="image" src="https://github.com/user-attachments/assets/ef6ae97e-d996-4ebc-87d3-5bebce74aea7" />
 <img width="1728" alt="image" src="https://github.com/user-attachments/assets/d9b33c83-07ad-4c3f-9b59-d7acc6c65b2e" />
 
+## Live Demo
+You can try the deployed chatbot here:
+👉 https://ai-data-chatbot.vercel.app
 
 ## Getting Started
 
