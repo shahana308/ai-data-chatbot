@@ -8,6 +8,41 @@ import { DataAnalysisResponse } from "types/DataAnalysis";
 import { ChatResponse } from "types/ChatResponse";
 import { Chat } from "types/Chat";
 
+const isGraphRelated = (message: string) => {
+  const keywords = [
+    "graph",
+    "dataset",
+    "yAxis",
+    "chart",
+    "data visualization",
+    "bar chart",
+    "line chart",
+    "pie chart",
+    "scatter plot",
+    "bubble chart",
+    "radar chart",
+    "polar area",
+    "doughnut chart",
+  ];
+  return keywords.some((keyword) =>
+    message.toLowerCase().includes(keyword.toLowerCase())
+  );
+};
+
+const formatGraphRequest = (message: string) => {
+  return `${message}\n\nPlease provide the data in this format:
+{
+  "title": "Chart Title",
+  "xAxisLabel": "X Axis Label",
+  "yAxisLabel": "Y Axis Label",
+  "data": [
+    { "x": "Category 1", "y": 10 },
+    { "x": "Category 2", "y": 20 }
+  ],
+  "chartType": "bar"
+}`;
+};
+
 const useChatWindow = () => {
   const [form] = Form.useForm();
 
@@ -71,7 +106,12 @@ const useChatWindow = () => {
         id: selectedChat.id,
       });
 
-      fetchBotResponse.mutate(value.message);
+      // If the message is graph-related, format it before sending to the API
+      const messageToSend = isGraphRelated(value.message)
+        ? formatGraphRequest(value.message)
+        : value.message;
+
+      fetchBotResponse.mutate(messageToSend);
     }
 
     form.resetFields();
