@@ -13,19 +13,53 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ msg }) => {
   let isChart = false;
   let chartData = null;
 
-  try {
-    const parsed = JSON.parse(msg?.bot_message || "");
-    if (
-      parsed?.data &&
-      parsed?.xAxisLabel &&
-      parsed?.yAxisLabel &&
-      parsed?.title
-    ) {
-      isChart = true;
-      chartData = parsed;
+  const isGraphRelated = (message: string) => {
+    const keywords = [
+      "graph",
+      "dataset",
+      "yAxis",
+      "chart",
+      "data visualization",
+      "bar chart",
+      "line chart",
+      "pie chart",
+      "scatter plot",
+      "bubble chart",
+      "radar chart",
+      "polar area",
+      "doughnut chart",
+    ];
+    return keywords.some((keyword) =>
+      message.toLowerCase().includes(keyword.toLowerCase())
+    );
+  };
+
+  const extractChartData = (message: string) => {
+    try {
+      //find JSON-like content between curly braces
+      const jsonMatch = message.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]);
+        if (
+          parsed?.data &&
+          parsed?.xAxisLabel &&
+          parsed?.yAxisLabel &&
+          parsed?.title
+        ) {
+          return parsed;
+        }
+      }
+    } catch (error) {
+      console.error("Error parsing chart data:", error);
     }
-  } catch {
-    isChart = false;
+    return null;
+  };
+
+  if (msg.bot_message) {
+    if (isGraphRelated(msg.bot_message)) {
+      chartData = extractChartData(msg.bot_message);
+      isChart = !!chartData;
+    }
   }
 
   return (
@@ -40,7 +74,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ msg }) => {
 
       {msg.bot_message && (
         <div className="flex justify-start mt-2">
-          <div className="p-3 rounded-lg shadow bg-gray-200 text-quinary max-w-[70%] !text-sm leading-6">
+          <div className="p-3 rounded-lg shadow bg-gray-200 text-quinary max-w-[70%] !text-sm leading-6 relative">
             {isChart ? (
               <ChartMessage chartData={chartData} />
             ) : (
