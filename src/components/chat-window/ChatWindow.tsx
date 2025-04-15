@@ -13,10 +13,20 @@ import {
   SaveOutlined,
   SaveFilled,
 } from "@ant-design/icons";
+import { useEffect, useRef } from "react";
 
 const ChatWindow = () => {
   const { form, isLoading, handleSubmit } = useChatWindow();
   const { chats, selectedChat } = useChatStore();
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chats, selectedChat, isLoading]);
 
   const handleFavorite = () => {
     if (selectedChat) {
@@ -89,6 +99,7 @@ const ChatWindow = () => {
             </div>
           </div>
         )}
+        <div ref={messagesEndRef} />
       </div>
 
       <div className="flex-grow"></div>
