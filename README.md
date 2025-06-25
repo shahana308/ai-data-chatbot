@@ -55,6 +55,4 @@ npm run cypress:headless
 - Cypress is used for end-to-end testing.
 - Tests are located in `__tests__` and `cypress` directories.
 
-## Contributing
-Feel free to contribute by submitting a pull request. Make sure to follow the contribution guidelines.
 
